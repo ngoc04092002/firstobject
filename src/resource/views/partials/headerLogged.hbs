@@ -1,0 +1,109 @@
+<div class="menus">
+    <div class="menu_bar">
+        <div class="close">x</div>
+        <div class="individual">
+            {{#if user1}}
+                {{#each user1.photos}}
+                <img src="{{this.value}}" alt="">
+                {{/each}}   
+            {{else}}
+                <img src="https://image.shutterstock.com/image-vector/initial-letter-nq-logo-simple-260nw-1967737729.jpg" alt="">
+            {{/if}}
+            {{{handleName user1 user2}}}
+        </div>
+        <ul class="infor_individual">
+            <li><a href="/user/account/profile">Tài khoản của tôi</a></li>
+            <li><a href="/user/purchase">Đơn mua</a></li>
+        </ul>
+        <p class="utensil">đồ dùng<span><i class="fas fa-chevron-down"></i></span></p>  
+        <ul class="show_items">
+            <li><a href="/products/shoes">giày</a></li>
+            <li><a href="/products/shirts">áo</a></li>
+            <li><a href="/products/hats">mũ</a></li>
+            <li><a href="/products/pants">quần</a></li>
+        </ul>
+        <span><a href="/" class="logout">Đăng xuất</a></span>
+    </div>
+</div>
+<section class="header">
+    {{#if logged}}
+    <div class="branch__bar">
+        <div class="fas fa-bars"></div>
+    </div>
+    {{/if}}
+    <div class="branch">
+        <a href="#">
+            <img src="https://image.shutterstock.com/image-vector/initial-letter-nq-logo-simple-260nw-1967737729.jpg" alt="" class="branch__img">
+        </a>
+        {{#if logged}}
+        <a href="/{{back}}"><span class="branch__back"><i class="fas fa-angle-left"></i>quay lại</span></a>
+        {{else}}
+        <span class="header__title">ShopNQ</span>
+        {{/if}}
+    </div>
+    <div class="search">
+        <label for="search"><i class="fas fa-search"></i></label>
+        <input type="text" placeholder="Tìm kiếm..." id="search" name="search" value="">
+        <div class="search__delete"><i class="fas fa-times"></i></div>
+        {{!-- <div class="search__items store">
+            <div class="loading">
+                <div class="lds-ring">
+                    <div></div><div></div><div></div><div></div>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+    <div class="inform">
+        <div class="inform__search">
+            <a href="/search"><i class="fas fa-search icon"></i></a>
+            <div class="inform__products-selected">
+                <i class="fas fa-shopping-cart icon"></i>
+                <span class="products__amounts"></span>
+                <div class="container">
+                    <div class="container_Pr">
+                        <div class="_nPr"></div>
+                        <span>Giỏ hàng chưa có sản phẩm</span>
+                    </div>
+                    <div class="container_Pr"> 
+                        <h1>Sản phẩm mới thêm</h1>
+                        <div class="loading">
+                            <div class="lds-ring">
+                                <div></div><div></div><div></div><div></div>
+                            </div>
+                        </div>
+                        <div class="store-items"></div>
+                        <button class="btn view_cart">Xem giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+            {{#if user1}}
+                {{#each user1.photos}}
+                <img src="{{this.value}}" alt="">
+                {{/each}}   
+            {{else}}
+                <img src="https://image.shutterstock.com/image-vector/initial-letter-nq-logo-simple-260nw-1967737729.jpg" alt="">
+            {{/if}}
+        </div>
+        <div class="person">
+            <ul class="inform_private">
+                <ul>
+                    {{#if user1}}
+                        {{#each user1.photos}}
+                        <img src="{{this.value}}" alt="">
+                        {{/each}}   
+                    {{else}}
+                        <img src="https://image.shutterstock.com/image-vector/initial-letter-nq-logo-simple-260nw-1967737729.jpg" alt="">
+                    {{/if}}
+                    {{{handleName user1 user2}}}
+                </ul>
+                <ul>
+                    <a href="/user/account/profile"><li>Tài khoản của tôi</li></a>
+                    <a href="/user/purchase"><li>Đơn mua</li></a>
+                    <a href="/" class="logout"><li>Đăng xuất</li></a>
+                </ul>
+            </ul>
+        </div>
+        
+    </div>
+</section>
+

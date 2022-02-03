@@ -1,0 +1,28 @@
+<div class="_oO">
+    <div class="_oOl"></div><span>thiết bị thông minh</span><div class="_oOl"></div>
+</div>
+<div class="container_products">
+    <div class="wrap_products">
+        {{#each products}}
+        <nav class="item">
+            <div class="item_col">
+                <div class="item_img">
+                    <a href="/products/smartDevice/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                </div>
+                <div class="inform_item">
+                    <p class="description_item">{{this.description}}</p>
+                    <p class="price_item"><span>₫</span>{{this.price}}</p>
+                    <div class="btn_click">
+                        <a href="/products/smartDevice/{{this.slug}}"><button class="btn buy_item">mua hàng</button></a>
+                        <a href=""><button class="btn add_cart">thêm vào giỏ</button></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{/each}}
+    </div>
+    {{#if products}}
+    {{else}}
+    <div class="not_products">hiên tại chưa có thêm sản phẩm nào</div>
+    {{/if}}
+</div>

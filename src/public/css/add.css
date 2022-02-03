@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Poppins:wght@100;300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap");
+body {
+  background-color: #e9e9e9; }
+
+.login_success {
+  margin: 10rem auto;
+  text-align: center;
+  width: 24rem;
+  height: 24rem; }
+  .login_success h1 {
+    white-space: nowrap;
+    margin: 2rem 0; }
+  .login_success a {
+    white-space: nowrap;
+    font-size: 2rem; }
+    .login_success a:hover {
+      text-decoration: underline; }
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none; }
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden; }
+  html::-webkit-scrollbar {
+    width: .8rem; }
+  html::-webkit-scrollbar-track {
+    background: #fff; }
+  html::-webkit-scrollbar-thumb {
+    background-color: #4fa4ee;
+    border-radius: 2rem; }
+
+section {
+  padding: 2rem 5%; }
+
+img {
+  object-fit: center;
+  object-position: center;
+  width: 100%;
+  height: 100%; }
+
+.loading .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px; }
+
+.loading .lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #b0f1f1 transparent transparent transparent; }
+
+.loading .lds-ring div:nth-child(1) {
+  animation-delay: -0.45s; }
+
+.loading .lds-ring div:nth-child(2) {
+  animation-delay: -0.3s; }
+
+.loading .lds-ring div:nth-child(3) {
+  animation-delay: -0.15s; }
+
+.btn {
+  background-color: #5197d4;
+  box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.1);
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 1.2rem;
+  color: #fff;
+  margin: 0 .4rem;
+  cursor: pointer; }
+
+@media (max-width: 61.938em) {
+  html {
+    font-size: 55%; } }
+
+@media (max-width: 48em) {
+  .footer .wrapperList_branch, .footer .wrapperList_support {
+    width: 50%;
+    padding-top: 2rem; }
+  .swiper-button-next, .swiper-button-prev {
+    display: none; }
+  .header .branch {
+    display: none; }
+  .header .inform .inform__search img {
+    display: none; } }
+
+@media (max-width: 28.125em) {
+  html {
+    font-size: 50%; }
+  .footer {
+    text-align: center; }
+    .footer .wrapperList_branch, .footer .wrapperList_support {
+      width: 100%;
+      padding-top: 2rem; }
+    .footer .wrapperList_branch__footer {
+      margin-left: 14rem; } }
+
+html {
+  color: #333; }
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  .main .form {
+    width: 36rem;
+    min-height: 10rem;
+    padding: 3.2rem 2.4rem;
+    text-align: center;
+    background: #fff;
+    border-radius: .2rem;
+    margin: 2.4rem;
+    align-self: center;
+    box-shadow: 0 0.2rem 0.8rem 0 rgba(51, 62, 73, 0.1); }
+    .main .form .heading {
+      font-size: 2rem;
+      color: #479ae2; }
+    .main .form .form-group {
+      display: flex;
+      margin-bottom: 1.6rem;
+      flex-direction: column; }
+      .main .form .form-group .form-label,
+      .main .form .form-group .form-message {
+        text-align: left; }
+      .main .form .form-group .form-label {
+        font-weight: 700;
+        padding-bottom: .6rem;
+        line-height: 1.8rem;
+        font-size: 1.4rem; }
+      .main .form .form-group .form-control {
+        height: 4rem;
+        padding: .8rem 1.2rem;
+        border: .1rem solid #b3b3b3;
+        border-radius: .3rem;
+        outline: none;
+        font-size: 1.4rem; }
+        .main .form .form-group .form-control:hover {
+          border-color: #5dabf0; }
+      .main .form .form-group .form-message {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding: .4rem 0 0; }
+      .main .form .form-group.invalid .form-control {
+        border-color: #f33a58; }
+      .main .form .form-group.invalid .form-message {
+        color: #f33a58; }
+    .main .form .form-submit {
+      outline: none;
+      background-color: #479ae2;
+      margin-top: 1.2rem;
+      padding: 1.2rem 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      border: none;
+      width: 100%;
+      font-size: 1.4rem;
+      border-radius: .8rem;
+      cursor: pointer; }
+      .main .form .form-submit:hover {
+        background-color: #5dabf0; }
+    .main .form .spacer {
+      margin-top: 3.6rem; }

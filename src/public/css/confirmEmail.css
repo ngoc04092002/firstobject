@@ -1,0 +1,29 @@
+.letter {
+  width: 50rem;
+  height: 38rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 10rem auto; }
+  .letter .letter_title {
+    display: flex;
+    align-items: center; }
+    .letter .letter_title .left {
+      color: #479ae2;
+      font-size: 3.6rem;
+      margin-right: 8rem;
+      cursor: pointer; }
+    .letter .letter_title h1 {
+      font-size: 2.4rem;
+      font-weight: 400;
+      text-transform: capitalize; }
+  .letter .letter_image {
+    width: 10rem;
+    height: 10rem;
+    margin: 3rem auto; }
+  .letter .letter_confirm {
+    font-size: 1.6rem;
+    margin-bottom: 4rem; }
+    .letter .letter_confirm p:nth-child(2) {
+      color: #479ae2; }

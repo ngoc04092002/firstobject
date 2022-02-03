@@ -1,0 +1,87 @@
+<div class="_mP">
+    <div class="_mPf">
+        <h1 class="_mPT">Hồ Sơ Của Tôi</h1>
+        <p class="_mPD">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+    </div>
+    <form method="POST" action="/user/account/edit?_method=PUT" class="form_profile">
+        <div class="_mPs">
+            <div class="_mPsr">
+                <div>
+                    <h3>tên đăng nhập:</h3>
+                    <div class="sd">
+                        {{{handleTitle user1 user2}}}<span>thay đổi</span>
+                    </div>
+                    <div class="repair_name">
+                        <input class="repairName" type="text" name="fullname" value="{{valueInput user1 user2}}" >
+                        <p class="P">Đóng</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>email:</h3>
+                    <div class="sd">
+                        <p style="text-transform: none;">{{handleEmail user2}}</p><span>thay đổi</span>
+                    </div>
+                    <div class="repair_email">
+                        <input class="repairEmail" value="{{user2.email}}" type="email" name="email">
+                        <p class="P">Đóng</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>giới tính:</h3>
+                    <div class="gender">
+                        <label class="radio" for="male">
+                            <input type="radio" name="gender" id="male" value="male" {{radioChecked user2 'male' }}>
+                            Name
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="gender">
+                        <label class="radio" for="female">
+                            <input type="radio" name="gender" id="female" value="female" {{radioChecked user2 'female'
+                                }}>
+                            Nữ
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="gender">
+                        <label class="radio" for="difference">
+                            <input type="radio" name="gender" id="difference" value="difference" {{radioChecked
+                                user2 'difference' }}>
+                            Khác
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="select">
+                    <h3 style="padding-top:.8rem;">ngày sinh:</h3>
+                    <select name="date" id="date">
+                        <option disabled selected>Ngày</option>
+                        {{{handleDate user2}}}
+                    </select>
+                    <select name="month" id="month">
+                        <option disabled selected>Tháng</option>
+                        {{{handleMonth user2}}}
+                    </select>
+                    <select name="year" id="year">
+                        <option disabled selected>Năm</option>
+                        {{{handleYear user2}}}
+                    </select>
+                </div>
+                <button class="btn">Lưu</button>
+            </div>
+            <div class="_mPsi">
+                <label for="input_img">
+                    <div class="_mPsi__image">
+                        <img src="{{image}}" alt="">
+                    </div>
+                </label>
+                <label for="input_img">
+                    <div class="btn">Chọn Ảnh</div>
+                </label>
+                <input type="file" hidden accept=".jpg,.jpeg,.png" id="input_img">
+                <p>Dụng lượng file tối đa 1 MB</p>
+                <p>Định dạng:.JPEG, .PNG</p>
+            </div>
+        </div>
+    </form>
+</div>

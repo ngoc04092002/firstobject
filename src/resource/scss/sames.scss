@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Poppins:wght@100;300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+  padding: 0;margin: 0;
+  outline: none; border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+    
+}
+
+$black:#334;
+$main-color: rgb(71, 154, 226);
+$box-shadow--color: 0 4px 12px 0 rgba(0 ,0 ,0,0.3);
+$border:.2rem solid $black;
+
+@mixin titleText($titleText){
+  font-size: $titleText;
+  text-transform:capitalize; ;
+  color: $black;
+}
+
+html{
+  
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        width:.8rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color:rgb(79, 164, 238);
+        border-radius: 2rem;
+    }
+}
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    padding:2rem 5%;
+}
+
+img{
+  object-fit: center;
+  object-position: center;
+  width:100%;
+  height:100%;
+}
+
+.loading{
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: rgb(176, 241, 241) transparent transparent transparent;
+      }
+      .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+      .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+      .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+}
+
+.btn{
+  background-color: rgb(81, 151, 212);
+  box-shadow: 0 0 .4rem 0 rgba(0,0,0,.1);
+  font-size: 1.6rem;
+  padding:1rem 2rem;
+  border-radius: 1.2rem;
+  color: #fff;
+  margin: 0 .4rem;
+  cursor:pointer;
+}
+
+
+@media (max-width:61.938em){ //1200px
+  html{
+    font-size: 55%;
+  }
+
+  
+}
+
+@media (max-width:48.000em){ //768px
+  .footer{
+    .wrapperList_branch,.wrapperList_support{
+      width:50%;
+      padding-top: 2rem;
+    }
+  }
+  .swiper-button-next,.swiper-button-prev{
+    display:none;
+  }
+  .header{
+    
+    .branch{
+      display:none;
+    }
+    .inform{
+
+      .inform__search{
+        img{
+          display:none;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:28.125em){ //456px
+  html{
+    font-size: 50%;
+  }
+
+  .footer{
+    text-align: center;
+    .wrapperList_branch,.wrapperList_support{
+      width:100%;
+      padding-top: 2rem;
+    }
+    .wrapperList_branch__footer{
+      margin-left: 14rem;
+    }
+  }
+}

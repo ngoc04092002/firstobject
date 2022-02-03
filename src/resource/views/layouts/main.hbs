@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png"
+        href="https://image.shutterstock.com/image-vector/initial-letter-nq-logo-simple-260nw-1967737729.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{#if signup}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    {{/if}}
+    {{#if outsite}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{/if}}
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    {{#if container}}
+    <link rel="stylesheet" type="text/css" href="/css/{{container}}.css">
+    {{/if}}
+
+</head>
+
+<body>
+
+    <div class="app">
+        {{#if signup}}
+        {{#if logged}}
+        {{>headerLogged}}
+        {{else}}
+        {{>header}}
+        {{/if}}
+        {{/if}}
+        <div class="container">
+            {{#if home}}
+            {{>home}}
+            {{/if}}
+            {{{body}}}
+            {{#if home}}
+            {{>pagination}}
+            {{/if}}
+        </div>
+        {{#if signUped}}
+        {{else}}
+        {{>footer}}
+        {{/if}}
+    </div>
+
+</body>
+{{#if outsite}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+{{/if}}
+{{#if signup}}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{{/if}}
+
+
+{{#if script}}
+<script src="/js/{{script}}.js"></script>
+{{else}}
+{{#if signUped}}
+{{else}}
+<script src="/js/script.js"></script>
+{{/if}}
+{{/if}}
+</html>

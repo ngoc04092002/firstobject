@@ -1,0 +1,24 @@
+<div class="container_products">
+    <ul>
+        <li>tất cả sản phẩm</li>
+    </ul>
+    <div class="wrap_products">
+        {{#each products}}
+        <nav class="item">
+            <div class="item_col">
+                <div class="item_img">
+                    <a href="/home/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                </div>
+                <div class="inform_item">
+                    <p class="description_item">{{this.description}}</p>
+                    <p class="price_item"><span>₫</span>{{this.price}}</p>
+                    <div class="btn_click">
+                        <a href="/home/{{this.slug}}"><button class="btn buy_item">mua hàng</button></a>
+                        <a href=""><button class="btn add_cart">thêm vào giỏ</button></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,37 @@
+$main-color:rgb(71, 154, 226);
+.letter{
+    width:50rem;
+    height:38rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin:10rem auto;
+    .letter_title{
+        display: flex;
+        align-items: center;
+        .left{
+            color: $main-color;
+            font-size: 3.6rem;
+            margin-right:8rem;
+            cursor: pointer;
+        }
+        h1{
+            font-size: 2.4rem;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+    }
+    .letter_image{
+        width:10rem;
+        height:10rem;
+        margin: 3rem auto;
+    }
+    .letter_confirm{
+        font-size: 1.6rem;
+        margin-bottom:4rem;
+        p:nth-child(2){
+            color:$main-color;
+        }
+    }
+}
