@@ -27,7 +27,8 @@
     "nodemailer": "^6.7.2",
     "passport": "^0.5.2",
     "passport-facebook": "^3.0.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "node-sass": "^7.0.1",

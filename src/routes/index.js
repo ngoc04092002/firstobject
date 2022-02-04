@@ -9,7 +9,7 @@ const productsRouter = require('./products');
 function router(app){
     app.use('/products',productsRouter);
     app.use('/user',userRouter);
-    // app.use('/buyer',buyerRouter);
+    app.use('/buyer',buyerRouter);
     app.use('/', siteRouter);
 }
 

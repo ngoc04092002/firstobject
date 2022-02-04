@@ -36,7 +36,10 @@ module.exports = async function Feedback(req, res, next) {
                 //send mail
 
                 let transport = nodemailer.createTransport({
+                    host:"smtp.gmail.com",
                     service: 'gmail',
+                    port:587,
+                    secure: false,
                     auth: {
                         user: process.env.USER_MAIL,
                         pass: process.env.USER_PASSWORD
