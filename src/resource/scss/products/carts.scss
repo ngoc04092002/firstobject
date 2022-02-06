@@ -1,0 +1,107 @@
+$main-color: rgb(71, 154, 226);
+
+.item_bought{
+    display: flex;
+    img{
+        width:8rem;
+        height:8rem;
+    }
+}
+
+table{
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    margin:6rem 0;
+    width:100%;
+    border-collapse: collapse;
+    th,td{
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        padding:1rem;
+        border-bottom: 1px solid #ccc;
+    }
+    th{
+        color:#888;
+        font-weight: 500;
+    }
+}
+
+.title{
+    border-bottom: 1px solid #ccc;
+    th:nth-child(1){
+        padding-left:2rem;
+        text-align: left;
+        input{
+            margin-right: 1rem;
+        }
+    }
+}
+
+.show_infor{
+    td:nth-child(1){
+        padding-left:2rem;
+        text-align: left;
+        .store_items{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            img{
+                margin:0 2rem;
+            }
+            span{
+                width: 30rem;
+                display:-webkit-box;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+                word-wrap: break-word;
+                overflow: hidden;
+            }
+        }
+    }
+    .operation_delete{
+        cursor: pointer;
+        &:hover{
+            color:$main-color;
+        }
+    }
+    .total_price{
+        color:$main-color;
+    }
+    .amount_items{
+        .inDe{
+            button{
+                cursor: pointer;
+                background-color:transparent;
+                border: 1px solid #ccc;
+                border: 1px solid #ccc;
+            }
+            input,button{
+                font-size: 1.6rem;
+                font-weight: 600;
+                padding:1rem;
+            }
+            input{
+                border-bottom: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                flex: 1;
+                width:5rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width:48.000em){ //768px
+    
+    .show_infor{
+        td:nth-child(1){
+            .store_items{
+                width:20rem;
+                span{
+                    width: 20rem;
+                }
+            }
+        }
+    }
+}

@@ -71,7 +71,13 @@ class SiteController {
                 })
             })
             .catch(next)
+    
     }
+
+    showItem(req, res, next){
+        
+    }
+
     //Cart
     Cart(req, res, next){
         res.render('products/cart',{
@@ -84,7 +90,6 @@ class SiteController {
             back:'home'
         })
     }
-
 };
 
 module.exports = new SiteController();

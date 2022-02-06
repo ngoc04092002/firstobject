@@ -4,7 +4,7 @@ const SiteController = require('../app/controllers/SiteController');
 const CheckLogin = require('../app/middlewares/CheckLogin');
 
 router.get('/', SiteController.showHeader);
-router.get('/home/:slug',CheckLogin.CheckLogged, SiteController.Home);
+router.get('/home/:slug',CheckLogin.CheckLogged, SiteController.showItem);
 router.get('/home',CheckLogin.CheckLogged, SiteController.Home);
 router.get('/cart',CheckLogin.CheckLogged, SiteController.Cart);
 router.get('/login',SiteController.logIn);

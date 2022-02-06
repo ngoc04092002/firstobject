@@ -1,0 +1,78 @@
+.item_bought {
+  display: flex; }
+  .item_bought img {
+    width: 8rem;
+    height: 8rem; }
+
+table {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 6rem 0;
+  width: 100%;
+  border-collapse: collapse; }
+  table th, table td {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc; }
+  table th {
+    color: #888;
+    font-weight: 500; }
+
+.title {
+  border-bottom: 1px solid #ccc; }
+  .title th:nth-child(1) {
+    padding-left: 2rem;
+    text-align: left; }
+    .title th:nth-child(1) input {
+      margin-right: 1rem; }
+
+.show_infor td:nth-child(1) {
+  padding-left: 2rem;
+  text-align: left; }
+  .show_infor td:nth-child(1) .store_items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; }
+    .show_infor td:nth-child(1) .store_items img {
+      margin: 0 2rem; }
+    .show_infor td:nth-child(1) .store_items span {
+      width: 30rem;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow: hidden; }
+
+.show_infor .operation_delete {
+  cursor: pointer; }
+  .show_infor .operation_delete:hover {
+    color: #479ae2; }
+
+.show_infor .total_price {
+  color: #479ae2; }
+
+.show_infor .amount_items .inDe button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border: 1px solid #ccc; }
+
+.show_infor .amount_items .inDe input, .show_infor .amount_items .inDe button {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem; }
+
+.show_infor .amount_items .inDe input {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  flex: 1;
+  width: 5rem;
+  text-align: center; }
+
+@media (max-width: 48em) {
+  .show_infor td:nth-child(1) .store_items {
+    width: 20rem; }
+    .show_infor td:nth-child(1) .store_items span {
+      width: 20rem; } }

@@ -56,6 +56,7 @@ if(addCart){
             items.forEach(item => getData(item))
             productsAmount.innerHTML = items.length;
             productsAmount.classList.add('active');
+            items.length ? productsAmount.classList.add('active') : productsAmount.classList.remove('active');
         }else{
             div[0].style.display='block';
             div[1].style.display='none';
@@ -75,8 +76,8 @@ if(addCart){
             title: title.innerText,
             price: price.innerText
         }];
-        getData(itemsCart);
         localStorage.setItem('items',JSON.stringify(itemsCart));
+        itemsCart.forEach(item => getData(item));
         return;
     }
     function getData(item){
@@ -92,6 +93,113 @@ if(addCart){
             </div>
         `
         store_items.appendChild(div);
+    }
+}
+
+//handle items Cart
+if(items){
+    const totalPrice = document.querySelector('.total_price');
+    let itemsCart = JSON.parse(localStorage.getItem('items'));
+    const tbody =  document.querySelector('tbody');
+    
+    if(tbody){
+        itemsCart.forEach(item => getItemsSelected(item));
+    
+        function getItemsSelected(item){
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+            const td3 = document.createElement('td');
+            const td4 = document.createElement('td');
+            const td5 = document.createElement('td');
+            const tr = document.createElement('tr');
+            tr.setAttribute('class', 'show_infor');
+            const divStore = document.createElement('div');
+    
+            td1.setAttribute('colspan', '2');
+            td1.setAttribute('class', 'item_bought');
+            divStore.setAttribute('class','store_items');
+            divStore.innerHTML = `
+                <input type="checkbox" name="checkBox" class="checkBox">
+                <img src="${item.image}" alt="">
+                <span>${item.title}</span>
+            `
+            td1.appendChild(divStore);
+    
+            td2.setAttribute('colspan', '2');
+            td2.setAttribute('class', 'item_price');
+            td2.innerHTML = `
+                <span>${item.price}</span>
+            `
+    
+            td3.setAttribute('colspan', '2')
+            td3.setAttribute('class', 'amount_items');
+            td3.innerHTML=`
+                <div class="inDe">
+                <button class="decrease">-</button><input type="text" class="amount" value="1"><button class="increase">+</button>
+                </div>
+            `
+            td4.setAttribute('colspan', '2');
+            td4.innerHTML = `
+                <span class="total_price">300d</span>
+            `
+            td5.setAttribute('colspan', '2');
+            td5.setAttribute('class', 'operation_delete');
+            td5.innerText = 'xóa';
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            tbody.appendChild(tr);
+        }
+    
+        function updateItems(){
+            let itemsCart = JSON.parse(localStorage.getItem('items')); 
+        }
+        
+        const allCheckBox = tbody.querySelectorAll('input[name="checkBox"]');
+        const checkAll = tbody.querySelector('.checkAll')
+        const decrease = document.querySelectorAll('.decrease');
+        const increase = document.querySelectorAll('.increase');
+        const amountInput = document.querySelectorAll('.amount');
+        const showInfor = document.querySelectorAll('.show_infor');
+    
+        decrease.forEach((decrease,index) => {
+            decrease.addEventListener('click',(function(){
+            +amountInput[index].value==1 ? decrease.disabled = true : decrease.disabled = false;
+            amountInput[index].value = +amountInput[index].value-1;
+        })) 
+        })
+        increase.forEach((increase,index) => {
+            increase.addEventListener('click',(function(){
+            amountInput[index].value = +amountInput[index].value+1;
+        })) 
+        })
+        checkAll.onchange = function(e) {
+            Array.from(allCheckBox).forEach(checkBox => {
+                checkBox.checked = e.target.checked;
+            })
+        }
+    
+        Array.from(allCheckBox).forEach(checkBox => {
+            checkBox.onchange = function(e) {
+                let isChecked = allCheckBox.length ===tbody.querySelectorAll('input[name="checkBox"]:checked').length;
+                checkAll.checked = isChecked;
+            }
+        })
+
+        Array.from(showInfor).forEach((showInfor,index) => {
+            showInfor.addEventListener('click',function(e){
+                if(e.target.className === 'operation_delete'){
+                    tbody.removeChild(showInfor);
+                    itemsCart.splice(index,1);
+                    localStorage.setItem('items',JSON.stringify(itemsCart));
+                    itemsCart.length ? productsAmount.classList.add('active') : productsAmount.classList.remove('active');
+                    productsAmount.innerHTML = itemsCart.length;
+                }
+            })
+        })
+
     }
 }
 
@@ -213,6 +321,5 @@ if(branchBar){
     })
 }
 
-//handle items Cart
-
+//item
 
