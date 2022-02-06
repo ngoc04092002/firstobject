@@ -82,11 +82,6 @@ var sess = {
   }
 }
 
-if (app.get('env') === 'production') {
-  app.set('trust proxy', 1) // trust first proxy
-  sess.cookie.secure = true // serve secure cookies
-  sess.cookie.sameSite = 'none'
-}
 
 app.use(
   cors({
@@ -117,7 +112,7 @@ PassPort(app);
 
 router(app);
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 42613;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
