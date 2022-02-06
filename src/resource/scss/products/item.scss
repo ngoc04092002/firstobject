@@ -1,0 +1,87 @@
+.container{
+    display:flex;
+    margin:2rem 0;
+    padding:1rem 2%;
+    background-color:#fff;
+    .item_img{
+        width:40rem;
+        height:50rem;
+        margin-right:3rem;
+    }
+    .title{
+        font-size: 1.6rem;
+        color:#ccc;
+        margin-right: 2rem;
+    }
+    .description{
+        .name{
+            font-size: 2rem;
+            span{
+                background-color:red;
+                color:#fff;
+                font-size: 1.2rem;
+                padding:.4rem .8rem;
+                margin-right: 1rem;
+            }
+        }
+        .price_item{
+            font-size: 2rem;
+            color:rgb(71, 154, 226);
+            margin-bottom: 1rem;
+        }
+        .description_item{
+            margin: 3.6rem 0;
+            font-size: 2rem;
+            width:48rem;
+            display:-webkit-box;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+        .transport{
+            display:flex;
+            margin:2rem 0;
+            .description_transport{
+                display:flex;
+                .icon{
+                    width:2rem;
+                    height:2rem;
+                    margin-right: .4rem;
+                }
+                .transport_fee{
+                    font-size:1.6rem;
+                }
+            }
+        }
+        .amounts{
+            display:flex;
+            .inDe{
+                display: flex;
+                button{
+                    cursor: pointer;
+                    background-color:transparent;
+                    border: 1px solid #ccc;
+                    border: 1px solid #ccc;
+                }
+                input,button{
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    padding:1rem;
+                }
+                input{
+                    border-bottom: 1px solid #ccc;
+                    border-top: 1px solid #ccc;
+                    flex: 1;
+                    width:5rem;
+                    text-align: center;
+                }
+            }
+        }
+        .btn{
+            margin-top:4rem;
+        }
+    }
+}

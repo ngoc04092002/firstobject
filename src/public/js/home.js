@@ -37,7 +37,6 @@ const items = JSON.parse(localStorage.getItem('items'));
 const div = document.querySelectorAll('.container .container_Pr');
 const addCart = document.querySelectorAll('.add_cart');
 const productsAmount = document.querySelector('.products__amounts');
-
 if(addCart){
     let imgURLCart = document.querySelector('.item_img img');
     let titleCart = document.querySelector('.description_item')
@@ -50,7 +49,7 @@ if(addCart){
     showItemsSelected();
     
     function showItemsSelected(){
-        if(items){
+        if(items.length){
             div[0].style.display='none';
             div[1].style.display='block';
             items.forEach(item => getData(item))
@@ -159,10 +158,10 @@ if(items){
         
         const allCheckBox = tbody.querySelectorAll('input[name="checkBox"]');
         const checkAll = tbody.querySelector('.checkAll')
+        const showInfor = document.querySelectorAll('.show_infor');
         const decrease = document.querySelectorAll('.decrease');
         const increase = document.querySelectorAll('.increase');
         const amountInput = document.querySelectorAll('.amount');
-        const showInfor = document.querySelectorAll('.show_infor');
     
         decrease.forEach((decrease,index) => {
             decrease.addEventListener('click',(function(){
@@ -200,6 +199,23 @@ if(items){
             })
         })
 
+    }
+    const deleteSelected  = document.querySelector('.delete_selected');
+    if(deleteSelected){
+        let form = document.createElement('form');
+        form.method='GET';
+        form.action='/cart';
+        itemsCart.length ? deleteSelected.style.display='block': deleteSelected.style.display='none';
+
+        deleteSelected.addEventListener('click',function(){
+            let itemsCart = JSON.parse(localStorage.getItem('items')); 
+            let checkBoxSelected = document.querySelectorAll('input[name="checkBox"]:checked');
+            //demo
+            itemsCart.splice(0,checkBoxSelected.length)
+            localStorage.setItem('items',JSON.stringify(itemsCart));
+            deleteSelected.appendChild(form);
+            form.submit();
+        })
     }
 }
 
@@ -323,3 +339,21 @@ if(branchBar){
 
 //item
 
+const amounts = document.querySelector('.amounts');
+if(amounts){
+    const decrease = document.querySelectorAll('.decrease');
+        const increase = document.querySelectorAll('.increase');
+        const amountInput = document.querySelectorAll('.amount');
+    
+        decrease.forEach((decrease,index) => {
+            decrease.addEventListener('click',(function(){
+            +amountInput[index].value==1 ? decrease.disabled = true : decrease.disabled = false;
+            amountInput[index].value = +amountInput[index].value-1;
+        })) 
+        })
+        increase.forEach((increase,index) => {
+            increase.addEventListener('click',(function(){
+            amountInput[index].value = +amountInput[index].value+1;
+        })) 
+        })
+}

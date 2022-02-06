@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  margin: 2rem 0;
+  padding: 1rem 2%;
+  background-color: #fff; }
+  .container .item_img {
+    width: 40rem;
+    height: 50rem;
+    margin-right: 3rem; }
+  .container .title {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-right: 2rem; }
+  .container .description .name {
+    font-size: 2rem; }
+    .container .description .name span {
+      background-color: red;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: .4rem .8rem;
+      margin-right: 1rem; }
+  .container .description .price_item {
+    font-size: 2rem;
+    color: #479ae2;
+    margin-bottom: 1rem; }
+  .container .description .description_item {
+    margin: 3.6rem 0;
+    font-size: 2rem;
+    width: 48rem;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden; }
+  .container .description .transport {
+    display: flex;
+    margin: 2rem 0; }
+    .container .description .transport .description_transport {
+      display: flex; }
+      .container .description .transport .description_transport .icon {
+        width: 2rem;
+        height: 2rem;
+        margin-right: .4rem; }
+      .container .description .transport .description_transport .transport_fee {
+        font-size: 1.6rem; }
+  .container .description .amounts {
+    display: flex; }
+    .container .description .amounts .inDe {
+      display: flex; }
+      .container .description .amounts .inDe button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border: 1px solid #ccc; }
+      .container .description .amounts .inDe input, .container .description .amounts .inDe button {
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1rem; }
+      .container .description .amounts .inDe input {
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        flex: 1;
+        width: 5rem;
+        text-align: center; }
+  .container .description .btn {
+    margin-top: 4rem; }

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="item_img">
+        <img src="{{product.image}}" alt="">
+    </div>
+    <div class="description">
+        <p class="name"><span>Yêu thích</span>{{product.name}}</p>
+        <p class="description_item">{{product.description}}</p>
+        <p class="price_item">{{product.price}}</p>
+        <div class="transport">
+            <p class="title">Vận chuyển</p>
+            <div class="description_transport">
+                <div class="icon">
+                    <img src="	https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/pdp/1cdd37339544d858f4d0ade5723cd477.png" alt="">
+                </div>
+                <div class="transport_fee">
+                    <p>Miễn phí vận chuyển</p>
+                    <p>Miễn phí vận chuyển cho đơn hàng trên ₫50.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="amounts">
+            <p class="title">Số lượng</p>
+            <div class="inDe">
+                <button class="decrease">-</button><input type="text" class="amount" value="1"><button class="increase">+</button>
+            </div>
+        </div>
+        <a href="/home/{{product.slug}}"><button class="btn add_cart">Thêm vào giỏ</button></a>
+    </div>
+</div>

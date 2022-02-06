@@ -1,6 +1,7 @@
 const isLogin = require('../models/logIn');
 const Products = require('../models/Products');
 const {mutipleMongooseToObject} = require('../../until/mongoose');
+const {mongooseToObject} = require('../../until/mongoose');
 const jwt = require('jsonwebtoken');
 
 class SiteController {
@@ -11,6 +12,7 @@ class SiteController {
             container: 'body',
             signup: true,
             outsite:true,
+            title: 'ShopNQ'
         });
 
     }
@@ -75,7 +77,20 @@ class SiteController {
     }
 
     showItem(req, res, next){
-        
+        Products.findOne({slug:req.params.slug})
+        .then(products => {
+            res.render('products/item',{
+                title:'NQ | Cart',
+                layout:'products',
+                user1: req.user,
+                user2: req.body,
+                logged:true,
+                container:'/products/item',
+                back:'home',
+                product:mongooseToObject(products)
+            })
+        })
+        .catch(next)
     }
 
     //Cart
